@@ -1,0 +1,28 @@
+
+set interfaces ethernet eth1 address '192.168.0.1/24'
+
+set interfaces ethernet eth1 duplex 'auto'
+set interfaces ethernet eth1 speed 'auto'
+
+-------------------------------------------------------------------
+set interfaces ethernet eth1 vif 100 description 'VLAN 100'
+set interfaces ethernet eth1 vif 100 address '192.168.100.1/24'
+
+set interfaces bridge 'br100'
+
+set interfaces bridge br100 address '192.168.100.1/24'
+
+set interfaces bridge br100 stp true
+--------------------------------------------------------------------
+
+
+
+
+set interfaces ethernet eth1 vif 200 description 'VLAN 200'
+set interfaces ethernet eth1 vif 200 address '192.168.200.1/24'
+
+set interfaces bridge 'br200'
+
+set interfaces bridge br200 address '192.168.200.1/24'
+
+set interfaces bridge br200 stp true

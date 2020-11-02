@@ -1,0 +1,39 @@
+Configuring from Command line
+
+Set the Virtual machine to NAT network
+
+
+Type '?' will give you a list of availble commands
+vyos@vyos:~$ ?
+
+
+Type 'configure' command
+vyos@vyos:~$ configure
+
+
+Configuration mode
+vyos@vyos# ?
+
+
+Its built of the juniper way of configuring which starts by a verb and the parameter that you want to configure
+verbs
+ 
+set
+delete
+edit
+
+
+command set ? gives a lsit of things that  we can configure
+vyos@vyos#set ? 
+vyos@vyos#set interface ?
+
+
+set service ssh
+
+set system login user admin
+
+set system login user admin authentication plaintext-password 
+
+set system login user admin level admin
+
+

@@ -1,0 +1,39 @@
+ Introduction
+Router distribution VYOS its an open source popular linux distribution build on top of debian
+Its comparable to any cisco router or juniper router
+It can be installed in a virtual environment 
+It can be installed in most hardware or old servers or laptop
+It can replace any router that you buy of the shelf 
+It can be used in your small medium sized business to do all your routing functions
+It runs all the popular routing protocal OSPF v2, BGB, Stateful firewall build into it,DHCP relay, VPN all kinds of tunnelling technologies
+Its turly power packed and worth the look
+Its formally vyatta but brocade bought them out and stopped on the development community edition but most of the configuration stayed the same.
+
+
+Features
+
+We try to provide as many network functions as possible to make VyOS usable anywhere from a small office router to an ISP edge, within reason. Have a checklist.
+VLANs:
+802.1q and QinQ
+Static and dynamic routing:
+BGP for IPv4 and IPv6, OSPFv2, RIP, RIPng, policy-based routing, equal cost multi-path
+Firewall:
+Firewall rulesets for IPv4 and IPv6 traffic you can assign to interfaces, zone-based firewall, address/network/port groups for IPv4 firewalls
+Tunnel interfaces:
+PPPoE, GRE, IPIP, SIT, static L2TPv3, VXLAN
+VPN:
+Site-to-site IPsec for IPv4 and IPv6, L2TP/IPsec server, PPTP server, OpenVPN for site-to-site and remote access
+NAT:
+Source NAT, port forwards, one to one, one to many, and many to many translations
+DHCP:
+DHCP and DHCPv6 server and relay
+Redundancy:
+VRRP, connection table synchronization
+Flow accounting:
+NetFlow and sFlow
+Proxy:
+Web proxy and URL filtering
+Shaping:
+QoS policies (drop tail, fair queue, and others), traffic redirection.
+
+

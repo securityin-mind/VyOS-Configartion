@@ -1,0 +1,106 @@
+NATING inside address to outside address
+----------------------------------------
+
+Computers in these subnet 192.168.1.1/24 to be NAT out 10.0.2.15/24 interface
+
+set interfaces ethernet eth0 description 'OUTSIDE'
+set interfaces ethernet eth1 description 'INSIDE'
+
+OUTGOING NAT we need NATING from the source 192.168.0.1/24 
+----------------------------------------------------------
+
+edit nat source rule 1 
+set outbound-interface eth0
+set source address 192.168.1.0/24 
+set translation address masquerade 
+
+Verify
+------
+vyos@vyos$ show nat source translation
+
+
+PORT FOWARDING
+--------------
+Public internet users able to access webserver
+for port 80 -> http or 443 -> https
+
+edit nat destination rule 1
+set inbound-interface eth0
+set inbound-interface any
+set destination address 10.16.11.70
+set destination port 80
+set transalation address 192.168.1.5 -> static IP address for my webserver
+set translation port 80
+set protocol tcp
+
+
+NAT REFLECTION
+--------------
+Listening to all interfaces for any request for the pc to access the server
+edit nat destination rule 2
+set source address 192.168.1.0/24
+set destination address 192.168.1.0/24
+set translation address masquerade
+set outbound-interface eth1
+set description 'NAT Description'
+commit
+save
+
+
+Verify
+------
+vyos@vyos$ show nat source translation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

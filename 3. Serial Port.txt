@@ -1,0 +1,8 @@
+
+name instance vyos
+
+In Hostpipe mode : Holds the path to the serial port's pipe on the host \\.\pipe\vyos , for
+Windows and unix and unix-like systems respectively
+
+In Host device mode: Holds the host the host serial device name Example
+COM1 or /dev/ttyS0

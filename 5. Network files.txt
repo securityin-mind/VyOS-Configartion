@@ -1,0 +1,49 @@
+VYOS Network Setup
+------------------
+192.168.1.0/24 subnet of our internal network
+
+Set interface eth0 and eth1
+---------------------------
+Configration mode
+vyos@vyos$ configure
+vyos@vyos# set interfaces ethernet eth0 address dhcp
+vyos@vyos# set interfaces ethernet eth1 address 192.168.1.1/24
+vyos@vyos# commit
+vyos@vyos# save
+
+eth0 is set to NAT and is assigned ip address by default by vbox  10.0.2.15/24 
+eth1 is set to Internal Network using a set name called 'VYOS' manually 192.168.1.1/24
+
+check for interface eth0 & eth1 on vyos router on global mode
+-------------------------------------------------------------
+vyos@vyos$ show interface
+
+Validate if ethernet is configured in the Global mode
+-------------------------------------------------------------
+vyos@vyos$ show interface ethernet
+
+Show Configration mode
+-------------------------------------------------------------
+vyos@vyos# show  
+
+
+set service dhcp-server shared-network-name MAIN subnet 192.168.1.0/24 default-router '192.168.1.1'
+set service dhcp-server shared-network-name MAIN subnet 192.168.1.0/24 dns-server '8.8.8.8'
+set service dhcp-server shared-network-name MAIN subnet 192.168.1.0/24 domain-name 'hqserver.local'
+set service dhcp-server shared-network-name MAIN subnet 192.168.1.0/24 start 192.168.1.10 stop '192.168.1.254'
+set service dhcp-server shared-network-name MAIN subnet 192.168.1.0/24 lease '86400'
+  							
+
+  						OR FOR A QUICK SETUP 
+set service dhcp-server shared-network-name MAIN subnet 192.168.1.0/24 default-router '192.168.1.1'
+edit service dhcp-server shared-network-name MAIN subnet 192.168.1.0/24
+set dns-server '8.8.8.8'
+set domain-name 'hqserver.local'
+set start 192.168.1.10 stop '192.168.1.254'
+set lease '86400'
+
+
+Test to see if the server is leasing IP addreses in the Global mode
+--------------------------------------------------------------------------
+#show dhcp server leases
+

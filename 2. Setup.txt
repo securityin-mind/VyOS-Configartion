@@ -1,0 +1,16 @@
+Installing an image
+
+vyos@vyos:~$ install image
+
+Set interface eth0 and eth1
+---------------------------
+Virtual Box network attachment settings
+
+eth0 is set to NAT                     
+eth1 is set to Internal Network 'VYOS'  
+
+
+
+Force exit from config mode
+---------------------------
+sudo chown -R root:vyattacfg /opt/vyatta/config/active/
